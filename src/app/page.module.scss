@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500&display=swap');
+
+.container {
+  font-family: "Inter", sans-serif;
+  background: #FAF7F2;
+  scroll-behavior: smooth;
+  color: #2C1B14;
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(250, 247, 242, 0.7);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #E8E1D6;
+  z-index: 20;
+
+  .logo {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 600;
+    font-size: 1.55rem;
+    letter-spacing: 0.7px;
+    color: #2C1B14;
+  }
+
+  .navLinks {
+    display: flex;
+    gap: 1.5rem;
+
+    a {
+      text-decoration: none;
+      color: #3C322B;
+      transition: 0.3s;
+      &:hover { color: #8A7A6A; }
+    }
+  }
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: url("/uploads/front.jpg") center/cover no-repeat;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(235, 226, 214, 0.63);
+    backdrop-filter: blur(4px);
+  }
+
+  .heroContent {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+
+    h1 {
+      font-size: 3.2rem;
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 600;
+      color: #2C1B14;
+    }
+
+    .divider {
+      font-size: 1.6rem;
+      margin: 0.6rem 0 1.2rem;
+      opacity: 0.9;
+    }
+
+    p {
+      color: #4E443F;
+      margin-bottom: 1.7rem;
+      font-size: 1.15rem;
+    }
+
+    .cta {
+      padding: 0.7rem 2rem;
+      border: 1px solid #2C1B14;
+      background: transparent;
+      color: #2C1B14;
+      border-radius: 4px;
+      transition: 0.25s;
+      font-weight: 500;
+      &:hover {
+        background: #2C1B14;
+        color: #EFE6DA;
+      }
+    }
+  }
+}
+
+.products {
+  padding: 6rem 3rem;
+  text-align: center;
+
+  h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 2.4rem;
+    color: #2C1B14;
+    margin-bottom: 0.5rem;
+  }
+
+  .subText {
+    color: #6B5A4B;
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+  }
+
+  .grid {
+    display: grid;
+    gap: 2.2rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    margin-bottom: 3rem;
+  }
+
+  .card {
+    text-align: center;
+    transition: 0.35s ease;
+    cursor: pointer;
+
+    &:hover {
+      transform: translateY(-4px);
+    }
+
+    .image {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 16px;
+      border: 1px solid #E6DFD2;
+    }
+
+    h3 {
+      font-family: "Cormorant Garamond", serif;
+      margin-top: 0.9rem;
+      font-size: 1.45rem;
+      color: #2C1B14;
+    }
+  }
+
+  .katalogBtn {
+    display: inline-block;
+    border: 1px solid #2C1B14;
+    padding: 0.65rem 1.6rem;
+    border-radius: 8px;
+    background: transparent;
+    color: #2C1B14;
+    font-weight: 500;
+    text-decoration: none;
+    transition: 0.25s;
+
+    &:hover {
+      background: #2C1B14;
+      color: #EFE6DA;
+    }
+  }
+}
+
+
+/* ✅ ABOUT — warna baru & spacing rapi */
+.about {
+  padding: 5rem 2rem; /* dikurangi dari 7rem */
+  text-align: center;
+  background: #F3ECE4; /* warna baru */
+
+  h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 2.5rem;
+    color: #2C1B14;
+    margin-bottom: 1.2rem;
+    position: relative;
+  }
+
+  h2::after {
+    content: "";
+    width: 55px;
+    height: 2px;
+    background: #2C1B14;
+    display: block;
+    margin: 0.6rem auto 0;
+    opacity: 0.6;
+  }
+
+  p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.14rem;
+    line-height: 1.65;
+    color: #4E443F;
+  }
+}
+
+/* TESTIMONIALS / REVIEWS */
+.testimonials {
+  padding: 4rem 1.5rem;
+  background: #f8f3ed;
+  text-align: center;
+}
+
+.testimonials h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  color: #2C1B14;
+}
+
+/* Wrapper for scroll */
+.reviewWrapper {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 0.8rem;
+  scroll-snap-type: x mandatory;
+}
+
+/* Hide scrollbar (optional) */
+.reviewWrapper::-webkit-scrollbar {
+  display: none;
+}
+
+/* Review Card */
+.reviewCard {
+  flex: 0 0 calc(33.33% - 1rem); /* TAMPIL 3 DALAM SEKALI SCREEN */
+  min-width: 260px; /* biar responsif di HP */
+  background: #ffffff;
+  border: 1px solid #e8dfd6;
+  border-radius: 10px;
+  padding: 1.2rem;
+  text-align: left;
+  scroll-snap-align: start;
+  transition: 0.3s ease;
+}
+
+.reviewCard:hover {
+  transform: translateY(-4px);
+}
+
+.reviewCard h4 {
+  font-size: 1rem;
+  color: #2C1B14;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+.stars {
+  color: #d2b48c;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.reviewCard p {
+  font-size: 0.9rem;
+  color: #4E443F;
+  line-height: 1.4;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .reviewCard {
+    flex: 0 0 70%;
+  }
+}
+
+@media (max-width: 480px) {
+  .reviewCard {
+    flex: 0 0 90%;
+  }
+}
+
+
+
+
+/* CONTACT */
+.contact {
+  padding: 5rem 2rem;
+  text-align: center;
+  background: #f7f2eb;
+
+  h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 2.4rem;
+    color: #2C1B14;
+    margin-bottom: 1rem;
+  }
+
+  .contactText {
+    max-width: 480px;
+    margin: 0 auto 2.5rem auto;
+    font-size: 1rem;
+    color: #4E443F;
+    line-height: 1.5;
+  }
+
+  .socials {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+
+    a {
+      padding: 0.75rem 1.7rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: 0.3s;
+      border: 1px solid transparent;
+    }
+
+    .igBtn {
+      background: #8A7A6A;
+      color: white;
+      &:hover { background: #6F6356; }
+    }
+
+    .emailBtn {
+      background: #EDE5DD;
+      color: #2C1B14;
+      border: 1px solid #CFC3B9;
+      &:hover { background: #D7CDC4; }
+    }
+
+    .waBtn {
+  background: #8A7A6A;
+  color: #FFFFFF;
+  border: 1px solid #6F6356;
+  &:hover { 
+    background: #6F6356;
+  }
+}
+
+  }
+}
+
+/* FOOTER */
+.footer {
+  padding: 2rem;
+  background: #2C1B14;
+  color: #FAF7F2;
+  text-align: center;
+  font-size: 0.95rem;
+}
